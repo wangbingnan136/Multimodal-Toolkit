@@ -140,6 +140,12 @@ Bert Base Multilingual Uncased | attention_on_cat_and_numerical_feats | 0.254 | 
 Bert Base Multilingual Uncased | gating_on_cat_and_num_feats_then_sum | **0.275** | 0.375 
 Bert Base Multilingual Uncased | weighted_feature_sum_on_transformer_cat_and_numerical_feats | 0.266 | **0.380**
 
+# Bug fixed in 2021-06-02
 
 Fix the problem caused by the version of transformers,the multimodal-toolkit can now work with the latest transformers.
+
+# TODO
+Improve the category embedding,the original implementation use one hot to transformer the category into numerical,which may leads
+to the memory error when a category feature has a lot of categories.
+
 
