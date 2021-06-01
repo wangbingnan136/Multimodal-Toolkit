@@ -139,3 +139,7 @@ Bert Base Multilingual Uncased | individual_mlps_on_cat_and_numerical_feats_then
 Bert Base Multilingual Uncased | attention_on_cat_and_numerical_feats | 0.254 | 0.375
 Bert Base Multilingual Uncased | gating_on_cat_and_num_feats_then_sum | **0.275** | 0.375 
 Bert Base Multilingual Uncased | weighted_feature_sum_on_transformer_cat_and_numerical_feats | 0.266 | **0.380**
+
+
+Fix the problem caused by the version of transformers,the multimodal-toolkit can now work with the latest transformers.
+
