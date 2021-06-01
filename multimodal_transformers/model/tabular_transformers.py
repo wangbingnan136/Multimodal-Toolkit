@@ -7,14 +7,20 @@ from transformers import (
     XLNetForSequenceClassification,
     XLMForSequenceClassification
 )
-from transformers.modeling_bert import BERT_INPUTS_DOCSTRING
-from transformers.modeling_roberta import ROBERTA_INPUTS_DOCSTRING
-from transformers.modeling_distilbert import DISTILBERT_INPUTS_DOCSTRING
-from transformers.modeling_albert import ALBERT_INPUTS_DOCSTRING
-from transformers.modeling_xlnet import XLNET_INPUTS_DOCSTRING
-from transformers.modeling_xlm import XLM_INPUTS_DOCSTRING
-from transformers.configuration_xlm_roberta import XLMRobertaConfig
-from transformers.file_utils import add_start_docstrings_to_callable
+
+from transformers.models.bert.modeling_bert import BERT_INPUTS_DOCSTRING
+from transformers.models.roberta.modeling_roberta import ROBERTA_INPUTS_DOCSTRING
+from transformers.models.distilbert.modeling_distilbert import DISTILBERT_INPUTS_DOCSTRING
+from transformers.models.albert.modeling_albert import ALBERT_INPUTS_DOCSTRING
+from transformers.models.xlnet.modeling_xlnet import XLNET_INPUTS_DOCSTRING
+from transformers.models.xlm.modeling_xlm import XLM_INPUTS_DOCSTRING
+from transformers import XLMRobertaConfig
+def add_start_docstrings_to_callable(*docstr):
+    def docstring_decorator(fn):
+        fn.__doc__ = ''.join(docstr) + fn.__doc__
+        return fn
+    return docstring_decorator
+
 
 from .tabular_combiner import TabularFeatCombiner
 from .tabular_config import TabularConfig
